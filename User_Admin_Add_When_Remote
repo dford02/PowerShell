@@ -1,6 +1,6 @@
 # Add a user to the local Administrators group 
 $computer = "Insert_Hostname_between parenthesis" 
-$username = "Insert_Username" # Replace "sr87" with the username of the user you want to add 
+$username = "Insert_Username" # Replace "Insert_Username" with the username of the user you want to add 
 $group = [ADSI]"WinNT://$computer/Administrators,group" 
   
 # Check if the user is already a member of the Administrators group 
