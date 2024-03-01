@@ -1,0 +1,13 @@
+# Add a user to the local Administrators group 
+$computer = "Insert_Hostname_between parenthesis" 
+$username = "Insert_Username" # Replace "sr87" with the username of the user you want to add 
+$group = [ADSI]"WinNT://$computer/Administrators,group" 
+  
+# Check if the user is already a member of the Administrators group 
+if ($group.IsMember("WinNT://$username")) { 
+    Write-Host "$username is already a member of the Administrators group." 
+} else { 
+    # Add the user to the Administrators group 
+    $group.Add("WinNT://$username") 
+    Write-Host "Added $username to the Administrators group." 
+} 
